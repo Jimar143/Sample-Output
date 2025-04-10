@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Favorite Artist Age Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: white;
+      color: #2575fc;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ddd;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+  </style>
+
+  <script>
+    // Function to check artist's age
+    function checkArtistAge() {
+      // Ask the user for age
+      let age = prompt("Enter the age of your favorite artist:");
+      
+      // Convert input to number
+      age = parseInt(age);
+
+      // Check if it's a number
+      if (isNaN(age)) {
+        alert("Please enter a valid number.");
+        return;
+      }
+
+      // Compare age with Google's age (25)
+      if (age < 25) {
+        alert(`They’re ${age} years old and they’re younger than Google.`);
+      } else if (age === 25) {
+        alert(`They’re ${age} years old and they’re as old as Google.`);
+      } else {
+        alert(`They’re ${age} years old and they’re older than Google.`);
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Favorite Artist Age Checker</h1>
+  <!-- Button to run the function -->
+  <button onclick="checkArtistAge()">Check Age</button>
+</body>
+</html>
